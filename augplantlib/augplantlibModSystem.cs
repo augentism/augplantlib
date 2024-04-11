@@ -76,7 +76,11 @@ namespace augplantlib
         {
             if (this.CurrentStage() >= this.fruitStage)
             {
-                if(secondsUsed >= (float) interactionInterval) {
+                BlockPos pos = blockSel.Position;
+                BlockSounds sounds = this.Sounds;
+                if(secondsUsed % 0.25 <= 0.05)
+                world.PlaySoundAt((sounds != null) ? sounds.GetHitSound(byPlayer) : null, (double)pos.X, (double)pos.Y, (double)pos.Z, byPlayer, true, 32f, 1f);
+                if (secondsUsed >= (float) interactionInterval) {
                     gibDrop(world, byPlayer, blockSel, prevStage);
                     return false;
                 }
