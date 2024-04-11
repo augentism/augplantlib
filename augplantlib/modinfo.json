@@ -3,11 +3,11 @@
     "modid": "augplantlib",
     "name": "augplantlib",
     "authors": [
-        "Unknown"
+        "augentism"
     ],
-    "description": "To be added",
-    "version": "1.0.0",
+    "description": "Adds some new plant types with custom functionality for NewWorldCrops. Written for v1.19.7",
+    "version": "0.0.1",
     "dependencies": {
-        "game": ""
+        "game": "1.19.7"
     }
 }
