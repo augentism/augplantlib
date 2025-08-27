@@ -17,7 +17,7 @@ using System.Diagnostics;
 [assembly: ModInfo("augplantlib",
                     Authors = new string[] { "augentism" },
                     Description = "Adds Code support for NewWorldCrops",
-                    Version = "0.0.3")]
+                    Version = "0.0.5")]
 
 namespace augplantlib
 {
