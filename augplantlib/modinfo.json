@@ -5,9 +5,9 @@
     "authors": [
         "augentism"
     ],
-    "description": "Adds some new plant types with custom functionality for NewWorldCrops. Written for v1.20.4",
-    "version": "0.0.4",
+    "description": "Adds some new plant types with custom functionality for NewWorldCrops. Written for v1.21.0",
+    "version": "0.0.5",
     "dependencies": {
-        "game": "1.20.4"
+        "game": "1.21.0"
     }
 }
