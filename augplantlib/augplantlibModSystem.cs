@@ -17,7 +17,7 @@ using System.Diagnostics;
 [assembly: ModInfo("augplantlib",
                     Authors = new string[] { "augentism" },
                     Description = "Adds Code support for NewWorldCrops",
-                    Version = "0.0.5")]
+                    Version = "0.0.6")]
 
 namespace augplantlib
 {
@@ -136,7 +136,8 @@ namespace augplantlib
                 BlockPos pos = blockSel.Position;
                 BlockSounds sounds = this.Sounds;
                 if(secondsUsed % 0.25 <= 0.05)
-                world.PlaySoundAt((sounds != null) ? sounds.GetHitSound(byPlayer) : null, (double)pos.X, (double)pos.Y, (double)pos.Z, byPlayer, true, 32f, 1f);
+                    world.PlaySoundAt(sounds.GetHitSound(byPlayer), (double)pos.X, (double)pos.Y, (double)pos.Z, blockSel.Position.dimension, byPlayer);
+                    //world.PlaySoundAt(new AssetLocation(sound), (double)pos.X, (double)pos.Y, (double)pos.Z, byPlayer, true, 32f, 1f);
                 if (secondsUsed >= (float) interactionInterval) {
                     gibDrop(world, byPlayer, blockSel, prevStage);
                     return false;
@@ -169,7 +170,8 @@ namespace augplantlib
                 }
             }
             BlockSounds sounds = this.Sounds;
-            world.PlaySoundAt((sounds != null) ? sounds.GetBreakSound(byPlayer) : null, (double)pos.X, (double)pos.Y, (double)pos.Z, byPlayer, true, 32f, 1f);
+            world.PlaySoundAt(sounds.GetHitSound(byPlayer), (double)pos.X, (double)pos.Y, (double)pos.Z, blockSel.Position.dimension, byPlayer);
+            //world.PlaySoundAt((sounds != null) ? sounds.GetBreakSound(byPlayer) : null, (double)pos.X, (double)pos.Y, (double)pos.Z, byPlayer, true, 32f, 1f);
             if (c != null) { world.BlockAccessor.ExchangeBlock(c.BlockId, blockSel.Position); }
         }
 
